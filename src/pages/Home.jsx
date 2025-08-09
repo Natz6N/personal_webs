@@ -19,6 +19,7 @@ import {
 import { LoadingScreen } from "../Components/LoadingScreen";
 import { useMediaQuery } from "react-responsive";
 import NavbarMobile from "../Components/NavMobile";
+import HeaderHome from "../Components/headerHome";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
@@ -102,13 +103,8 @@ export default function Home() {
           className="block font-me h-full w-full"
           style={{ opacity: 0 }}
         >
-            {
-                !isTabletOrMobile ? (<Navbar />) : <NavbarMobile/> 
-            }
-          
-
-          {/* Overlay */}
-          <div className="w-full h-screen"></div>
+          {!isTabletOrMobile ? <Navbar /> : <NavbarMobile />}
+          {!isTabletOrMobile ? <div className="w-full h-screen"></div> : <HeaderHome />}
 
           {/* About Section */}
           <section

@@ -1,12 +1,32 @@
-# React + Vite
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Frontend Portfolio
 
-Currently, two official plugins are available:
+Proyek ini adalah **portfolio frontend** yang saat ini menggunakan data dummy.  
+Backend-nya belum dibuat (lagi malas 😆), jadi sebagian konten diambil dari Pinterest untuk tujuan tampilan saja.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> Jangan kaget kalau ada gambar atau teks yang kelihatan “random” — ini memang hanya untuk showcase desain.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Fitur
+- Desain responsif dan modern.
+- Menggunakan **React + Tailwind CSS**.
+- Data sementara dari sumber publik (Pinterest).
+- Fokus pada **UI/UX** untuk keperluan portfolio.
+
+---
+
+## 📄 Lisensi
+Proyek ini dilisensikan di bawah lisensi [MIT](https://choosealicense.com/licenses/mit/).
+
+---
+
+## 👤 Penulis
+- [@natzsixn](https://github.com/Natz6N)
+
+---
+
+## 📷 Preview
+*(Tambahkan screenshot project di sini kalau sudah siap)*
+
