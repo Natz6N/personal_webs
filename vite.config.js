@@ -7,4 +7,8 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["lucide-react"],
   },
+  server: {
+    port: 3000, // Ganti dengan nomor port yang Anda inginkan
+    host: "0.0.0.0", // Dengarkan semua alamat, termasuk LAN dan publik
+  },
 });

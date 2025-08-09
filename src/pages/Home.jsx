@@ -17,28 +17,46 @@ import {
   useTextAnimation,
 } from "../hook/Gsap";
 import { LoadingScreen } from "../Components/LoadingScreen";
-
+import { useMediaQuery } from "react-responsive";
+import NavbarMobile from "../Components/NavMobile";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const homeContainerRef = useRef(null);
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   // About section animation
   const { aboutRef, imageRef, textRef, skillRefs } = useAboutAnimation();
 
   // Section animations
-  const { sectionRefs: serviceRefs, sectionRef: servicesRef } = useSectionAnimation("#services");
-  const { sectionRefs: projectRefs, sectionRef: projectsRef } = useSectionAnimation("#projects");
-  const { sectionRefs: testimonialRefs, sectionRef: testimonialsRef } = useSectionAnimation("#testimonials");
-  const { sectionRefs: blogRefs, sectionRef: blogRef } = useSectionAnimation("#blog");
+  const { sectionRefs: serviceRefs, sectionRef: servicesRef } =
+    useSectionAnimation("#services");
+  const { sectionRefs: projectRefs, sectionRef: projectsRef } =
+    useSectionAnimation("#projects");
+  const { sectionRefs: testimonialRefs, sectionRef: testimonialsRef } =
+    useSectionAnimation("#testimonials");
+  const { sectionRefs: blogRefs, sectionRef: blogRef } =
+    useSectionAnimation("#blog");
 
   // Text animations for headings
-  const { textRef: aboutTitleRef } = useTextAnimation('[data-animate]', aboutRef);
-  const { textRef: servicesTitleRef } = useTextAnimation('[data-animate]', servicesRef);
-  const { textRef: projectsTitleRef } = useTextAnimation('[data-animate]', projectsRef);
-  const { textRef: testimonialsTitleRef } = useTextAnimation('[data-animate]', testimonialsRef);
-  const { textRef: faqTitleRef } = useTextAnimation('[data-animate]');
-  const { textRef: blogTitleRef } = useTextAnimation('[data-animate]', blogRef);
+  const { textRef: aboutTitleRef } = useTextAnimation(
+    "[data-animate]",
+    aboutRef
+  );
+  const { textRef: servicesTitleRef } = useTextAnimation(
+    "[data-animate]",
+    servicesRef
+  );
+  const { textRef: projectsTitleRef } = useTextAnimation(
+    "[data-animate]",
+    projectsRef
+  );
+  const { textRef: testimonialsTitleRef } = useTextAnimation(
+    "[data-animate]",
+    testimonialsRef
+  );
+  const { textRef: faqTitleRef } = useTextAnimation("[data-animate]");
+  const { textRef: blogTitleRef } = useTextAnimation("[data-animate]", blogRef);
 
   // Project modal state
   const [selectedProject, setSelectedProject] = useState(null);
@@ -84,7 +102,10 @@ export default function Home() {
           className="block font-me h-full w-full"
           style={{ opacity: 0 }}
         >
-          <Navbar />
+            {
+                !isTabletOrMobile ? (<Navbar />) : <NavbarMobile/> 
+            }
+          
 
           {/* Overlay */}
           <div className="w-full h-screen"></div>
@@ -294,7 +315,11 @@ export default function Home() {
           </section>
 
           {/* Testimonials Section */}
-          <section id="testimonials" ref={testimonialsRef} className="w-full py-20 px-6 md:px-20 relative">
+          <section
+            id="testimonials"
+            ref={testimonialsRef}
+            className="w-full py-20 px-6 md:px-20 relative"
+          >
             <div className="text-center mb-14 relative z-10">
               <div ref={testimonialsTitleRef}>
                 <h2
@@ -399,7 +424,11 @@ export default function Home() {
           </section>
 
           {/* Blog Section */}
-          <section id="blog" ref={blogRef} className="w-full py-20 px-6 md:px-20 relative">
+          <section
+            id="blog"
+            ref={blogRef}
+            className="w-full py-20 px-6 md:px-20 relative"
+          >
             {/* Heading */}
             <div className="text-center mb-14 relative z-10">
               <div ref={blogTitleRef}>
